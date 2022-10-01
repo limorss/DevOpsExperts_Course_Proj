@@ -1,7 +1,11 @@
 version: '3.7'
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        - PROJ_NAME="${PROJ_NAME}"
+        - PORT="${PORT}"
     image: "${IMAGE}"
     privileged: true
     user: root
@@ -9,6 +13,6 @@ services:
       - "${PORT}:${PORT}"
     container_name: "${NODE_NAME}"
     environment:
-      - COMPOSE_PROJECT_NAME = "${PROJ_NAME}" 
+      - COMPOSE_PROJECT_NAME="${PROJ_NAME}" 
     volumes:
       - .:/Code

@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         PROJ_NAME = "DevOpsExperts_Course_Proj"
-        PROJ_DEV_BRANCH = "development"
+        PROJ_BRANCH = "development"
         USER = "limorss"
         IMAGE = "${USER}/wog_image"
         CREDS = "630919f2-d46e-494d-8f5e-d2fcd7508c27"
@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: PROJ_DEV_BRANCH, changelog: false, credentialsId: CREDS, url: "https://github.com/${USER}/${PROJ_NAME}"
+                git branch: PROJ_BRANCH, changelog: false, credentialsId: CREDS, url: "https://github.com/${USER}/${PROJ_NAME}"
             }
         }
         stage('Build docker image (with docker-compose.yaml)') {

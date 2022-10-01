@@ -2,7 +2,7 @@ version: '3.7'
 services:
   web:
     build: .
-    image: 'wog_image'
+    image: 'limorss/wog_image'
     privileged: true
     user: root
     ports:

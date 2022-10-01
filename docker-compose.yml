@@ -2,13 +2,13 @@ version: '3.7'
 services:
   web:
     build: .
-    image: 'limorss/wog_image'
+    image: "${IMAGE}"
     privileged: true
     user: root
     ports:
-      - "5000:5000"
-    container_name: WOG_Node
+      - "${PORT}:${PORT}"
+    container_name: "${NODE_NAME}"
     environment:
-      - COMPOSE_PROJECT_NAME = "DevOpsExperts_Course_Proj" 
+      - COMPOSE_PROJECT_NAME = "${PROJ_NAME}" 
     volumes:
-      - .:/"${COMPOSE_PROJECT_NAME}"
+      - .:/Code

@@ -4,8 +4,8 @@ services:
     build:
       context: .
       args:
-        - PROJ_NAME="${PROJ_NAME}"
-        - PORT="${PORT}"
+        PROJ_NAME: "${PROJ_NAME}"
+        PORT: "${PORT}"
     image: "${IMAGE}"
     privileged: true
     user: root

@@ -6,7 +6,7 @@ services:
       args:
         PROJ_NAME: "${PROJ_NAME}"
         PORT: "${PORT}"
-    image: "${IMAGE}"
+    image: "${IMAGE_TAG}"
     privileged: true
     user: root
     ports:

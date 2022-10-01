@@ -33,9 +33,9 @@ pipeline {
                 bat "docker compose exec web python e2e.py -u ${FLASK_SERVER_URL}/"
             }
         }
-        stage('Push my docker to docker hub...') {
+        stage('Push to docker hub when test pass...') {
             steps {
-                bat "docker compose push ${IMAGE}"
+                bat "docker compose push"
             }
         }
     }

@@ -22,7 +22,7 @@ def test_scores_service(url):
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         full_bin_path = ChromeDriverManager(path=BIN_CHROME_DRIVER_DEST).install()
-        my_driver = webdriver.Chrome(service=ChromeService(full_bin_path), chrome_options=chrome_options)
+        my_driver = webdriver.Chrome(service=ChromeService(full_bin_path), options=chrome_options)
         my_driver.get(url)
         score = my_driver.find_element(by="xpath", value='//*[@id="score"]').text
         print(score)

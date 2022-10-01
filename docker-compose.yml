@@ -1,11 +1,7 @@
 version: '3.7'
 services:
   web:
-    build:
-      context: .
-      args:
-      - PROJ_NAME="${PROJ_NAME}"
-      - PORT="${PORT}"
+    build: .
     image: "${IMAGE}"
     privileged: true
     user: root
